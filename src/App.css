@@ -1,0 +1,155 @@
+#root { width: 100%; max-width: none; min-height: 100vh; margin: 0; padding: 0; text-align: left; }
+.tf {
+  min-height: 100vh;
+  background: #f7f8fa;
+  color: #172b4d;
+  font: 15px/1.5 Inter, system-ui, sans-serif;
+}
+.tf * { box-sizing: border-box; }
+.tf h1, .tf h2, .tf h3, .tf h4 { color: inherit; margin: 0; letter-spacing: normal; }
+.tf .tf-header { padding: 20px 16px; text-align: center; background: #fff; border-bottom: 1px solid #dfe4ea; }
+.tf .tf-header h1 { font-size: clamp(28px, 4vw, 36px); line-height: 1.2; }
+.tf-workspace { display: grid; grid-template-columns: 174px minmax(0, 1fr); }
+.tf-nav { display: flex; flex-direction: column; gap: 5px; padding: 22px 12px; border-right: 1px solid #dfe4ea; }
+.tf-nav strong, .tf-nav a { padding: 8px 10px; }
+.tf-nav a { color: #0747a6; border-radius: 6px; text-decoration: none; }
+.tf-nav a:first-of-type, .tf-nav a:hover { background: #e9f2ff; }
+.tf-main { width: 100%; max-width: 1220px; margin: 0 auto; padding: clamp(14px, 3vw, 32px); }
+.tf-main h2 { font-size: 26px; }
+.tf-summary, .tf-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.tf-summary { margin: 8px 0 18px; }
+.tf-summary span, .tf-actions span { border-radius: 4px; padding: 3px 8px; background: #edf1f6; color: #344563; font-size: 13px; font-weight: 600; }
+.tf span.tf-done { background: #dcf3e7; color: #216447; }
+.tf-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.tf-panel { min-width: 0; border: 1px solid #dfe4ea; border-radius: 8px; background: #fff; }
+.tf-panel h3, .tf-panel > p { margin: 0; padding: 14px 16px; }
+.tf-panel h3 { font-size: 17px; }
+.tf-panel h4 { padding: 8px 16px; border-top: 1px solid #dfe4ea; background: #f7f8fa; font-size: 14px; }
+.tf ul { list-style: none; margin: 0; padding: 0; }
+.tf li { display: flex; align-items: flex-start; gap: 10px; padding: 12px 16px; border-top: 1px solid #e6eaf0; }
+.tf input[type='checkbox'] { flex: none; width: 18px; height: 18px; margin: 3px 0 0; accent-color: #0c56c4; }
+.tf-task { min-width: 0; overflow-wrap: anywhere; }
+.tf-task p { margin: 3px 0 8px; color: #44546f; }
+.tf form { padding: 0 16px 16px; }
+.tf fieldset { min-width: 0; padding: 0; border: 0; margin: 0; display: grid; gap: 12px; }
+.tf label { display: grid; gap: 5px; font-weight: 600; }
+.tf .tf-check { display: flex; gap: 8px; align-items: center; }
+.tf input:not([type='checkbox']), .tf textarea, .tf select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #8590a2;
+  border-radius: 5px;
+  background: #fff;
+  color: #172b4d;
+  font: inherit;
+  font-weight: 400;
+}
+.tf textarea { resize: vertical; }
+.tf button { padding: 5px 10px; border: 1px solid #dfe4ea; border-radius: 5px; color: #0747a6; background: #fff; font: inherit; }
+.tf button.tf-primary { background: #0c56c4; color: #fff; border-color: #0c56c4; font-weight: 600; }
+.tf button:disabled { opacity: .55; }
+.tf :focus-visible { outline: 2px solid #0c56c4; outline-offset: 2px; }
+.tf [role='alert'] { color: #ae2a19; }
+@media (max-width: 850px) { .tf-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .tf-workspace { grid-template-columns: 1fr; }
+  .tf-nav { flex-direction: row; flex-wrap: wrap; padding: 8px 12px; border-right: 0; border-bottom: 1px solid #dfe4ea; }
+  .tf-nav strong { display: none; }
+}
+
+.tf ul > li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+.tf-task-controls, .tf-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tf-task-controls { flex-wrap: wrap; justify-content: flex-end; }
+.tf-row-actions { flex-wrap: nowrap; }
+.tf-status {
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #edf1f6;
+  color: #344563;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.tf button.tf-delete { color: #ae2a19; }
+@media (max-width: 1100px) {
+  .tf-task-controls { flex-direction: column; align-items: flex-end; }
+}
+@media (max-width: 480px) {
+  .tf ul > li { grid-template-columns: minmax(0, 1fr); }
+  .tf-task-controls { grid-column: 1; flex-direction: row; justify-content: flex-start; }
+}
+
+.tf [data-stage="1"] { background: #deebff; color: #0747a6; }
+.tf [data-stage="2"] { background: #f3eaff; color: #5e3090; }
+.tf [data-stage="3"] { background: #fff0c2; color: #6d4700; }
+/* Sprint görevleri */
+.tf #sprint-tasks {
+  padding: 20px 22px;
+}
+
+.tf #sprint-tasks ~ section h4 {
+  padding: 12px 18px;
+  background: #f4f5f7;
+  color: #44546f;
+}
+
+.tf #sprint-tasks ~ section li {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: 16px;
+  row-gap: 6px;
+  padding: 16px 18px;
+}
+
+.tf #sprint-tasks ~ section .tf-task {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.tf #sprint-tasks ~ section .tf-task p {
+  margin-bottom: 0;
+}
+
+.tf #sprint-tasks ~ section .tf-task-controls {
+  display: contents;
+}
+
+.tf #sprint-tasks ~ section .tf-status,
+.tf #sprint-tasks ~ section .tf-task-controls > select {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  justify-self: end;
+  width: auto;
+}
+
+.tf #sprint-tasks ~ section .tf-row-actions {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  gap: 8px;
+}
+
+@media (max-width: 420px) {
+  .tf #sprint-tasks ~ section li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tf #sprint-tasks ~ section .tf-status,
+  .tf #sprint-tasks ~ section .tf-task-controls > select {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .tf #sprint-tasks ~ section .tf-row-actions {
+    grid-row: 3;
+  }
+}
