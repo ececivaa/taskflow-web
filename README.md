@@ -5,8 +5,7 @@
 Küçük ekipler için sprint bazlı görev takip uygulamasının web arayüzü. Görevler sprintlere ayrılır, sorumlu kişiye göre gruplanır ve
 **Analiz → Geliştirme → Test / KKT → Sürüm bekliyor** aşamalarında izlenir.
 
-<!-- Ekran görüntüsü: docs/screenshot.png dosyasını ekledikten sonra aşağıdaki satırın yorumunu kaldırın. -->
-<!-- ![TaskFlow ekran görüntüsü](docs/screenshot.png) -->
+![TaskFlow ekran görüntüsü: sorumluya göre gruplanmış sprint görevleri ve yeni görev formu](docs/screenshot.png)
 
 ## Özellikler
 
